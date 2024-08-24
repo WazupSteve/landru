@@ -3,33 +3,199 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LANDRU - Traffic Flow Optimization</title>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
-    <link rel="stylesheet" href="style.css">
+    <title>Landru: Traffic Flow Optimization</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>LANDRU</h1>
-            <h2>Traffic Flow Optimization</h2>
-        </header>
+    <nav class="navbar">
+        <a href="#home" class="logo-text">Landru</a>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#goals">Goals</a></li>
+            <li><a href="#approach">Approach</a></li>
+            <li><a href="#demo">Demo</a></li>
+            <li><a href="#tech-stack">Tech Stack</a></li>
+            <li><a href="#impact">Impact</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="auth-buttons">
+            <button class="btn btn-signin">Sign In</button>
+            <button class="btn btn-signup">Sign Up</button>
+        </div>
+    </nav>
 
-        <main>
-            <section class="search-section">
-                <form id="locationForm">
-                    <label for="locationInput">Enter Location:</label>
-                    <input type="text" id="locationInput" name="location" placeholder="City, Street, etc.">
-                    <button type="submit">Search</button>
-                </form>
-            </section>
+    <header id="home">
+        <h1 class="main-title">Landru: Traffic Flow Optimization</h1>
+        <p class="subtitle">Revolutionizing Urban Mobility through Machine Learning</p>
+        <a href="#about" class="btn btn-cta">Learn More</a>
+    </header>
 
-            <section class="map-section">
-                <div id="map"></div>
-            </section>
-        </main>
-    </div>
+    <section id="about" class="section">
+        <div class="container">
+            <h2>About Landru</h2>
+            <p>Landru is an advanced repository housing the codebase for creating and training a machine learning model that utilizes traffic simulation data for large-scale traffic optimization. Our project leverages reinforcement learning techniques on virtual traffic networks to understand traffic patterns, predict traffic conditions, and optimize traffic flow.</p>
+            <div class="about-grid">
+                <div class="about-item">
+                    <i class="fas fa-city"></i>
+                    <h3>Smart Cities</h3>
+                    <p>Empowering cities with AI-driven traffic management solutions.</p>
+                </div>
+                <div class="about-item">
+                    <i class="fas fa-car"></i>
+                    <h3>Reduced Congestion</h3>
+                    <p>Minimizing traffic jams and improving overall traffic flow.</p>
+                </div>
+                <div class="about-item">
+                    <i class="fas fa-leaf"></i>
+                    <h3>Eco-Friendly</h3>
+                    <p>Decreasing emissions and promoting sustainable urban mobility.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+    <section id="goals" class="section">
+        <div class="container">
+            <h2>Our Goals</h2>
+            <div class="goal-grid">
+                <div class="goal-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Understanding Traffic Patterns</h3>
+                    <p>Analyze simulated traffic flow to gain insights into vehicle behavior, congestion dynamics, and potential bottlenecks.</p>
+                </div>
+                <div class="goal-card">
+                    <i class="fas fa-magic"></i>
+                    <h3>Predicting Traffic Conditions</h3>
+                    <p>Develop a trained model capable of forecasting future traffic states, allowing for proactive management and mitigation of congestion.</p>
+                </div>
+                <div class="goal-card">
+                    <i class="fas fa-traffic-light"></i>
+                    <h3>Optimizing Traffic Flow</h3>
+                    <p>Utilize the model's insights to design and evaluate strategies for optimizing traffic signal timing, route planning, and infrastructure improvements.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="approach" class="section">
+        <div class="container">
+            <h2>Our Approach</h2>
+            <div class="approach-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Data Collection</h3>
+                    <p>Utilize OpenStreetMap (OSM) data as the primary source. This involves accessing road networks, traffic signals, and other pertinent details from OSM. The extracted data is processed to convert it into UXSIM-compatible traffic data.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Model Training</h3>
+                    <p>Train a machine learning model using reinforcement learning techniques to understand and predict traffic patterns.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Evaluation</h3>
+                    <p>Assess the model's performance in predicting traffic conditions and optimizing traffic flow through simulation-based experiments.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Deployment</h3>
+                    <p>Integrate the trained model into real-world traffic management systems for practical applications.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="demo" class="section">
+        <div class="container">
+            <h2>Interactive Demo</h2>
+            <p>Experience the power of Landru's traffic flow optimization in action:</p>
+            <div class="demo-container">
+                <!--please update the gradio link here if it changes (the current one is just for 72hrs)-->
+                <iframe src="https://a2ac7b1629673e09ad.gradio.live/" frameborder="0" width="100%" height="500"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <section id="tech-stack" class="section">
+        <div class="container">
+            <h2>Our Technology Stack</h2>
+            <div class="tech-grid">
+                <div class="tech-card">
+                    <img src="../landru-test/uxsim.png" alt="UXSim Logo">
+                    <h3>UXSim</h3>
+                    <p>Foundation for traffic simulation, providing essential functionalities for modeling traffic scenarios.</p>
+                </div>
+                <div class="tech-card">
+                    <img src="https://tianshou.org/en/stable/_static/tianshou-logo.png" alt="Tianshou Logo">
+                    <h3>Tianshou</h3>
+                    <p>Core framework for implementing reinforcement learning algorithms and developing intelligent traffic optimization agents.</p>
+                </div>
+                <div class="tech-card">
+                    <img src="https://about.fb.com/wp-content/uploads/2022/09/PyTorch-Foundation-Launch_Header.jpg?w=1920" alt="PyTorch Logo">
+                    <h3>PyTorch</h3>
+                    <p>Deep learning framework used for building and training neural networks in our traffic optimization models.</p>
+                </div>
+                <div class="tech-card">
+                    <img src="https://www.openstreetmap.org/assets/osm_logo_256-ed028f90468224a272961c380ecee0cfb73b8048b34f4b4b204b7f0d1097875d.png" alt="OpenStreetMap Logo">
+                    <h3>OpenStreetMap</h3>
+                    <p>Source of geographical data for creating realistic traffic network simulations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="impact" class="section">
+        <div class="container">
+            <h2>Landru's Impact</h2>
+            <div class="impact-stats">
+                <div class="stat-card">
+                    <i class="fas fa-building"></i>
+                    <h3>Cities Optimized</h3>
+                    <p id="cities-optimized">0</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-car-side"></i>
+                    <h3>Traffic Reduction</h3>
+                    <p><span id="traffic-reduction">0</span>%</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-leaf"></i>
+                    <h3>CO2 Reduction</h3>
+                    <p><span id="co2-reduction">0</span>%</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <div class="container">
+            <h2>Get in Touch</h2>
+            <form id="contact-form">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" required></textarea>
+                <button type="submit" class="btn btn-submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Landru. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <button id="scrollToTop" class="scroll-to-top"><i class="fas fa-arrow-up"></i></button>
+
     <script src="script.js"></script>
 </body>
 </html>
